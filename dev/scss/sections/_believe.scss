@@ -1,0 +1,89 @@
+/* =============
+    Believe
+============= */
+#believe {
+
+    @include xl{
+        display: grid;
+        grid-template-areas: ". section-grid .";
+        grid-template-columns: auto 1200px auto;
+    }
+
+    > div {
+        @include md {
+            display: grid;
+            grid-template-areas: "believe-img believe-text";
+            grid-template-columns: 40% auto;
+        }
+
+        @include xl{
+            grid-area: section-grid;
+        }
+
+        section {
+            display: grid;
+            grid-template-areas: ". believe .";
+            grid-template-columns: 20px auto 20px;
+            margin-bottom: 40px;
+            @include md {
+                grid-area: believe-text;
+            }
+
+            div {
+                align-items: center;
+                display: flex;
+                grid-area: believe;
+                text-align: center;
+                @include md {
+                    text-align: left;
+                }
+
+                article {
+                    border-bottom: 3px solid $rust;
+                    border-top: 3px solid $rust;
+                    padding: 20px 0;
+
+                    h1 {
+                        font-size: rem-calc(28);
+                        margin-bottom: 15px;
+
+                        @include md{
+                            font-size: rem-calc(30);
+                        }
+
+                        @include lg{
+                            font-size: rem-calc(36);
+                        }
+
+                        @include xl{
+                            font-size: rem-calc(40);
+                        }
+                    }
+
+                    p {
+                        font-size: rem-calc(16);
+
+                        @include lg{
+                            font-size: rem-calc(20);
+                        }
+
+                        @include xl{
+                            font-size: rem-calc(22);
+                            padding-right: 50px;
+                        }
+                    }
+                }
+            }
+        }
+
+        aside {
+            background-image: url("../img/believe/believe.jpg");
+            background-size: cover;
+            height: 80vh;
+            @include md {
+                grid-area: believe-img;
+                height: 50vh;
+            }
+        }
+    }
+}

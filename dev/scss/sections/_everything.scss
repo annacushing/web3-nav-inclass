@@ -1,0 +1,40 @@
+/* =============
+    Everything
+============= */
+#everything {
+    display: grid;
+    grid-template-areas: ". everything .";
+    grid-template-columns: 20px auto 20px;
+    @include md {
+        grid-template-columns: auto 65% auto;
+    }
+    @include lg {
+        grid-template-columns: auto 50% auto;
+    }
+    @include xl {
+        grid-template-columns: auto 1200px auto;
+    }
+
+    > div {
+        border-bottom: 3px solid $black;
+        border-top: 3px solid $black;
+        grid-area: everything;
+        padding: 20px 0;
+        text-align: center;
+        @include xl {
+            margin: 0 auto;
+            width: 55%;
+        }
+
+        h1 {
+            color: $rust;
+            font-size: rem-calc(27);
+            @include md {
+                font-size: rem-calc(40);
+            }
+            @include xl {
+                font-size: rem-calc(60);
+            }
+        }
+    }
+}

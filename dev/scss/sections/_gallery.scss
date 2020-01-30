@@ -1,0 +1,68 @@
+/* =============
+    Gallery
+============= */
+
+#gallery{
+
+    @include xl{
+        display: grid;
+        grid-template-columns: auto 1200px auto;
+        grid-template-areas: ". gallery .";
+    }
+
+
+    ul{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 50vh);
+        grid-gap: 20px;
+
+        @include md{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 50vh);
+            grid-template-areas:
+            "gallery-1 gallery-1"
+            "gallery-2 gallery-3";
+        }
+
+        @include xl{
+            grid-area: gallery;
+            grid-template-columns: 60% auto;
+            grid-template-rows: repeat(2, 40vh);
+            grid-template-areas:
+            "gallery-1 gallery-2"
+            "gallery-1 gallery-3";
+        }
+
+        li{
+            background-size: cover;
+
+            @include md{
+                margin: 0;
+            }
+
+        }
+
+        li:nth-child(1){
+            background-image: url('../img/gallery/gallery-1.jpg');
+            background-position: center;
+            @include md{
+                grid-area: gallery-1;
+            }
+        }
+
+        li:nth-child(2){
+            background-image: url('../img/gallery/gallery-2.jpg');
+            @include md{
+                grid-area: gallery-2;
+            }
+        }
+
+        li:nth-child(3){
+            background-image: url('../img/gallery/gallery-3.jpg');
+            @include md{
+                grid-area: gallery-3;
+            }
+        }
+    }
+}
