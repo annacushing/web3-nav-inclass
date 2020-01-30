@@ -311,9 +311,6 @@ template {
 /* =============
     Base
 ============= */
-main {
-  position: relative; }
-
 figure {
   margin: 0;
   padding: 0; }
@@ -370,37 +367,18 @@ textarea {
 /* =============
     Navigation
 ============= */
-nav {
+/* =============
+    Nav Background
+============= */
+#nav-bg {
   position: fixed;
-  top: 0;
-  right: -80vw;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  background-color: #D87337;
   z-index: 15;
-  width: 80vw;
-  height: 100vh;
-  background-color: #fff; }
-  @media (min-width: 768px) {
-    nav {
-      right: -50vw;
-      width: 50vw; } }
-  @media (min-width: 992px) {
-    nav {
-      right: -40vw;
-      width: 40vw; } }
-  @media (min-width: 1200px) {
-    nav {
-      right: -30vw;
-      width: 30vw; } }
-  nav ul {
-    padding: 100px 0 0 20px; }
-    nav ul li {
-      margin-bottom: 20px; }
-      nav ul li a:link, nav ul li a:visited {
-        color: #000;
-        text-decoration: none;
-        transition: 0.25s;
-        font-size: 2.5rem; }
-      nav ul li a:hover, nav ul li a:active {
-        color: #D87337; }
+  top: 10px;
+  right: 10px; }
 
 /* =============
     Header

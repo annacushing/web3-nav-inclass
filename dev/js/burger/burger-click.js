@@ -9,13 +9,10 @@ $("#burger-container").on("click", function(){
     if(canYouSeeNav === false){
         gsap.set("#outline",{alpha:1});
         lineToX.play();
-        gsap.to("main",{duration:0.25, x:-navWidth});
-        gsap.to("nav",{duration:0.25, x:-navWidth});
+        gsap.to("#nav-bg",{duration:0.5, scale:100});
         canYouSeeNav = true;
     }else{
         lineToX.reverse();
-        gsap.to("main",{duration:0.25, x:0});
-        gsap.to("nav",{duration:0.25, x:0});
         canYouSeeNav = false;
     }
 });
